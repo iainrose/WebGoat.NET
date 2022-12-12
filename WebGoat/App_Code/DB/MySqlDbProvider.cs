@@ -533,10 +533,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         public string GetEmailByCustomerNumber(string num)
         {
             string output = "";
+            string safe-input = "safe-input"
             try
             {
             
-                output = (String)MySqlHelper.ExecuteScalar(_connectionString, "select email from CustomerLogin where customerNumber = " + num);
+                output = (String)MySqlHelper.ExecuteScalar(_connectionString, "select email from CustomerLogin where customerNumber = " + safe-input);
                 /*using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     string sql = "select email from CustomerLogin where customerNumber = " + num;
